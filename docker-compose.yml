@@ -17,6 +17,7 @@ services:
   postgres:
     image: postgres:latest
     container_name: golangswarmpostgres
+    restart: always
     environment:
       - POSTGRES_USER=${db_user}  
       - POSTGRES_PASSWORD=${db_pass}
@@ -26,17 +27,15 @@ services:
       - '5432:5432'
     volumes:
       - database_postgres:/var/lib/postgresql/data
-    networks:
-      - network-api
     
   pgadmin:
     image: dpage/pgadmin4
     container_name: golangswarmpgadmin
+    restart: always
     environment:
       PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL}
       PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD}
-    depends_on:
-      - postgres
+      PGADMIN_LISTEN_PORT: ${PGADMIN_DEFAULT_PORT}
     ports:
       - "5050:5050"
 
