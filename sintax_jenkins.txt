@@ -1,0 +1,14 @@
+docker-compose up -d --build
+docker-compose ps
+curl -v http://192.168.100.3:8007/api/transaction
+docker-compose down 
+docker tag golangswarmapi_app:latest 192.168.100.3:5000/golangswarmapi
+docker-compose push 
+docker tag golangswarmpostgres:latest 192.168.100.3:5000/golangswarmapi
+docker-compose push 
+docker tag golangswarmpgadmin:latest 192.168.100.3:5000/golangswarmapi
+docker-compose push 
+curl http://192.168.100.3:5000/v2/
+docker stack deploy --compose-file docker-compose-swarm.yml golangswarmapi
+docker stack services golangswarmapi
+curl -v http://192.168.100.3:8007/transaction
