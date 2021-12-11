@@ -16,7 +16,7 @@ services:
 
   postgres:
     image: postgres:latest
-    container_name: go-db
+    container_name: golangswarmpostgres
     environment:
       - POSTGRES_USER=${db_user}  
       - POSTGRES_PASSWORD=${db_pass}
@@ -31,7 +31,7 @@ services:
     
   pgadmin:
     image: dpage/pgadmin4
-    container_name: pgadmin_container
+    container_name: golangswarmpgadmin
     environment:
       PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL}
       PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD}
