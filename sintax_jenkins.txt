@@ -4,9 +4,9 @@ curl -v http://192.168.100.3:8007/api/transaction
 docker-compose down 
 docker tag golangswarmapi_app:latest 192.168.100.3:5000/golangswarmapi
 docker-compose push 
-docker tag golangswarmpostgres:latest 192.168.100.3:5000/golangswarmpostgres
+docker tag postgres:latest 192.168.100.3:5000/golangswarmpostgres
 docker-compose push 
-docker tag golangswarmpgadmin:latest 192.168.100.3:5000/golangswarmpgadmin
+docker tag dpage/pgadmin4:latest 192.168.100.3:5000/golangswarmpgadmin
 docker-compose push 
 curl http://192.168.100.3:5000/v2/
 docker stack deploy --compose-file docker-compose-swarm.yml golangswarmapi
