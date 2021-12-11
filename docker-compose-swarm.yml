@@ -59,7 +59,7 @@ services:
     depends_on:
       - postgres
     ports:
-      - "5050:85"
+      - "5050:80"
     networks:
       - network-api
     restart: unless-stopped
