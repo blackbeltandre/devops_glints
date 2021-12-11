@@ -1,4 +1,4 @@
-module pawoon
+module api
 
 go 1.16
 

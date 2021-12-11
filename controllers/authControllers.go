@@ -2,8 +2,8 @@ package controllers
 
 import (
 	"encoding/json"
-	"pawoon/models"
-	u "pawoon/utils"
+	"api/models"
+	u "api/utils"
 	"net/http"
 )
 

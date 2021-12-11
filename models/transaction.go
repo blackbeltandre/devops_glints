@@ -3,7 +3,7 @@ package models
 import (
 	"fmt"
 	"gorm.io/gorm"
-	u "pawoon/utils"
+	u "api/utils"
 )
 
 type Transaction struct {

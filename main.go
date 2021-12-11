@@ -3,8 +3,8 @@ package main
 import (
 	"fmt"
 	"github.com/gorilla/mux"
-	"pawoon/app"
-	"pawoon/controllers"
+	"api/app"
+	"api/controllers"
 	"net/http"
 	"os"
 )

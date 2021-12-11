@@ -3,7 +3,7 @@ package models
 import (
 	"github.com/dgrijalva/jwt-go"
     "gorm.io/gorm"
-	u "pawoon/utils"
+	u "api/utils"
 	"golang.org/x/crypto/bcrypt"
 	"os"
 	"strings"
