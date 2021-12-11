@@ -1,7 +1,7 @@
 package app
 
 import (
-	u "pawoon/utils"
+	u "api/utils"
 	"net/http"
 )
 
