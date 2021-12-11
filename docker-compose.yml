@@ -50,4 +50,4 @@ volumes:
 # Networks to be created to facilitate communication between containers
 networks:
   network-api:
-    driver: bridge
+    driver: overlay
