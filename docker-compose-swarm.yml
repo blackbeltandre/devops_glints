@@ -20,8 +20,16 @@ services:
 
 
   postgres:
-    image: postgres:latest
-    container_name: go-db
+    image: 192.168.100.3:5000/golangswarmpostgres
+    build: .
+    deploy:
+      replicas: 2
+      resources:
+        limits:
+          cpus: "0.2"
+          memory: 50M
+      restart_policy:
+        condition: on-failure 
     environment:
       - POSTGRES_USER=${db_user}  
       - POSTGRES_PASSWORD=${db_pass}
@@ -35,8 +43,16 @@ services:
       - network-api
     
   pgadmin:
-    image: dpage/pgadmin4
-    container_name: pgadmin_container
+    image: 192.168.100.3:5000/golangswarmpgadmin
+    build: .
+    deploy:
+      replicas: 2
+      resources:
+        limits:
+          cpus: "0.2"
+          memory: 50M
+      restart_policy:
+        condition: on-failure 
     environment:
       PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL}
       PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD}
