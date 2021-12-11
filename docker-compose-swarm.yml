@@ -4,7 +4,7 @@ services:
     image: 127.0.0.1:5000/gostackapi
     build: .
     ports: 
-      - 8008:8008 
+      - 8007:8007 
     deploy:
       replicas: 2
       resources:
