@@ -1,7 +1,7 @@
 version: '3'
 services:
   app:
-    container_name: go-api
+    container_name: golangswarmapi
     build: .
     ports: 
       - 8007:8007 
