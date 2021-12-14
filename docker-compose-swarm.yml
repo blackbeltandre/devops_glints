@@ -42,25 +42,6 @@ services:
     networks:
       - network-api
     
-  pgadmin:
-    image: 192.168.100.3:5000/golangswarmpgadmin
-    build: .
-    deploy:
-      replicas: 2
-      resources:
-        limits:
-          cpus: "0.2"
-          memory: 50M
-      restart_policy:
-        condition: on-failure 
-    environment:
-      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL}
-      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD}
-      PGADMIN_LISTEN_PORT: ${PGADMIN_DEFAULT_PORT}
-    depends_on:
-      - postgres
-    ports:
-      - "5050:5050"
 
 volumes:
   api:
