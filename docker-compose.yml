@@ -30,18 +30,7 @@ services:
     networks:
       - network-api
 
-  pgadmin:
-    image: dpage/pgadmin4:latest
-    container_name: golangswarmpgadmin
-    restart: always
-    environment:
-      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL}
-      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD}
-      PGADMIN_LISTEN_PORT: ${PGADMIN_DEFAULT_PORT}
-    ports:
-      - "5050:5050"
-    networks:
-      - network-api  
+ 
 
 volumes:
   api:
