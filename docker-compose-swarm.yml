@@ -1,7 +1,7 @@
 version: '3.3'
 services:
   app:
-    image: 192.168.100.3:5000/golangswarmapi
+    image: localhost:5000/golangswarmapi
     build: .
     ports: 
       - 8007:8007 
@@ -20,7 +20,7 @@ services:
 
 
   postgres:
-    image: 192.168.100.3:5000/golangswarmpostgres
+    image: localhost:5000/golangswarmpostgres
     build: .
     deploy:
       replicas: 2
