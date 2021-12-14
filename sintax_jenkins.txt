@@ -9,11 +9,12 @@ docker image tag dpage/pgadmin4:latest 127.0.0.1:5000/golangswarmpgadmin_app:lat
 docker image push 127.0.0.1:5000/golangswarmpgadmin_app:latest
 curl http://127.0.0.1:5000/v2/
 docker stack deploy --compose-file docker-compose-swarm.yml golangswarmapi
+docker stack ls
 docker stack services golangswarmapi
-curl -X POST http://127.0.0.1:8007/api/new -H "Content-type: application/json" -d '{
+curl -X POST http://192.168.100.3:8007/api/user/new -H "Content-type: application/json" -d '{
 "email" : "developerpdak@gmail.com",
-"name" : "Andre",
-"password" : "S2komputer"
+"name" : "Andrea",
+"password" : "S2komputers"
 }'
 
 #https://github.com/dockersamples/docker-swarm-visualizer
