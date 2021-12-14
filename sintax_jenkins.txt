@@ -1,12 +1,12 @@
 docker-compose up -d --build
 docker-compose ps
 docker-compose down 
-docker image tag golangswarmapi_app:latest 127.0.0.1:5000/golangswarmapi
-docker image push
-docker image tag postgres:latest 127.0.0.1:5000/golangswarmpostgres
-docker image push
-docker image tag dpage/pgadmin4:latest 127.0.0.1:5000/golangswarmpgadmin
-docker image push
+docker image tag golangswarmapi_app:latest 127.0.0.1:5000/golangswarmapi_app:latest
+docker image push 127.0.0.1:5000/golangswarmapi:latest
+docker image tag postgres:latest 127.0.0.1:5000/golangswarmpostgres_app:latest
+docker image push 127.0.0.1:5000/golangswarmpostgres:latest
+docker image tag dpage/pgadmin4:latest 127.0.0.1:5000/golangswarmpgadmin_app:latest
+docker image push 127.0.0.1:5000/golangswarmpgadmin_app:latest
 curl http://127.0.0.1:5000/v2/
 docker stack deploy --compose-file docker-compose-swarm.yml golangswarmapi
 docker stack services golangswarmapi
