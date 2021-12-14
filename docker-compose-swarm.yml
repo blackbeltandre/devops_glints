@@ -56,7 +56,9 @@ services:
       PGADMIN_LISTEN_PORT: ${PGADMIN_DEFAULT_PORT}
     ports:
       - "5050:5050"  
-
+    networks:
+      - network-api
+      
 volumes:
   api:
   database_postgres:                  
