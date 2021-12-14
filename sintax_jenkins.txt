@@ -4,7 +4,7 @@ docker-compose down
 docker image tag golangswarmapi_app:latest 127.0.0.1:5000/golangswarmapi_app:latest
 docker image push 127.0.0.1:5000/golangswarmapi_app:latest
 docker image tag postgres:latest 127.0.0.1:5000/golangswarmpostgres_app:latest
-docker image push 127.0.0.1:5000/golangswarmpostgres:latest
+docker image push 127.0.0.1:5000/golangswarmpostgres_app:latest
 docker image tag dpage/pgadmin4:latest 127.0.0.1:5000/golangswarmpgadmin_app:latest
 docker image push 127.0.0.1:5000/golangswarmpgadmin_app:latest
 curl http://127.0.0.1:5000/v2/
@@ -16,5 +16,6 @@ curl -X POST http://192.168.100.3:8007/api/user/new -H "Content-type: applicatio
 "name" : "Andrea",
 "password" : "S2komputers"
 }'
+
 
 #https://github.com/dockersamples/docker-swarm-visualizer
