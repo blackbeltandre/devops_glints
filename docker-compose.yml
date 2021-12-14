@@ -9,12 +9,12 @@ services:
     volumes:
       - api:/usr/src/app/
     depends_on:
-      - postgres          
+      - swarmpostgres          
     networks:
       - network-api
 
 
-  postgres:
+  swarmpostgres:
     image: postgres:latest
     container_name: golangswarmpostgres
     restart: always

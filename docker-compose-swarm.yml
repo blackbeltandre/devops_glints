@@ -13,12 +13,12 @@ services:
       restart_policy:
         condition: on-failure  
     depends_on:
-      - postgres          
+      - swarmpostgres          
     networks:
       - network-api
 
 
-  postgres:
+  swarmpostgres:
     image: 127.0.0.1:5000/golangswarmpostgres_app:latest
     deploy:
       replicas: 2
@@ -54,8 +54,6 @@ services:
       PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL}
       PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD}
       PGADMIN_LISTEN_PORT: ${PGADMIN_DEFAULT_PORT}
-    depends_on:
-      - postgres
     ports:
       - "5050:5050"  
 
