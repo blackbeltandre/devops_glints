@@ -10,7 +10,6 @@ docker image push 127.0.0.1:5000/golangswarmpgadmin_app:latest
 curl http://127.0.0.1:5000/v2/
 docker stack deploy --compose-file docker-compose-swarm.yml golangswarmapi
 docker stack services golangswarmapi
-docker service logs golangswarmapi
 curl -X POST http://127.0.0.1:8007/api/new -H "Content-type: application/json" -d '{
 "email" : "developerpdak@gmail.com",
 "name" : "Andre",
