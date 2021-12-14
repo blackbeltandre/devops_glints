@@ -9,11 +9,17 @@ docker image push 127.0.0.1:5000/golangswarmpostgres_app:latest
 curl http://127.0.0.1:5000/v2/
 docker stack deploy --compose-file docker-compose-swarm.yml golangswarmapi
 docker stack ls
+
 docker stack services golangswarmapi
+curl -X POST http://192.168.100.4:8007/api/user/new -H "Content-type: application/json" -d '{
+"email" : "admin@gmail.com",
+"name" : "Admin",
+"password" : "admin01."
+}'
 curl -X POST http://192.168.100.3:8007/api/user/new -H "Content-type: application/json" -d '{
-"email" : "developerpdak@gmail.com",
-"name" : "Andrea",
-"password" : "S2komputers"
+"email" : "user@gmail.com",
+"name" : "User",
+"password" : "user01."
 }'
 
 
