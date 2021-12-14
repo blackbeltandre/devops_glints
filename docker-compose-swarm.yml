@@ -1,7 +1,7 @@
 version: '3.3'
 services:
   app:
-    image: localhost:5000/golangswarmapi
+    image: 127.0.0.1:5000/golangswarmapi
     ports: 
       - 8007:8007 
     deploy:
@@ -19,7 +19,7 @@ services:
 
 
   postgres:
-    image: localhost:5000/golangswarmpostgres
+    image: 127.0.0.1:5000/golangswarmpostgres
     deploy:
       replicas: 2
       resources:
@@ -67,3 +67,4 @@ volumes:
 networks:
   network-api:
     driver: overlay
+    attachable: true

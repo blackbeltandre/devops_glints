@@ -1,18 +1,20 @@
 docker-compose up -d --build
 docker-compose ps
 docker-compose down 
-docker tag golangswarmapi_app:latest 192.168.100.3:5000/golangswarmapi
-docker-compose push 
-docker tag postgres:latest 192.168.100.3:5000/golangswarmpostgres
-docker-compose push 
-docker tag dpage/pgadmin4:latest 192.168.100.3:5000/golangswarmpgadmin
-docker-compose push 
-curl http://192.168.100.3:5000/v2/
+docker image tag golangswarmapi_app:latest 127.0.0.1:5000/golangswarmapi
+docker image push
+docker image tag postgres:latest 127.0.0.1:5000/golangswarmpostgres
+docker image push
+docker image tag dpage/pgadmin4:latest 127.0.0.1:5000/golangswarmpgadmin
+docker image push
+curl http://127.0.0.1:5000/v2/
 docker stack deploy --compose-file docker-compose-swarm.yml golangswarmapi
 docker stack services golangswarmapi
-
-curl -X POST http://192.168.100.3:8007/api/new -H "Content-type: application/json" -d '{
+docker service logs golangswarmapi
+curl -X POST http://127.0.0.1:8007/api/new -H "Content-type: application/json" -d '{
 "email" : "developerpdak@gmail.com",
 "name" : "Andre",
 "password" : "S2komputer"
 }'
+
+#https://github.com/dockersamples/docker-swarm-visualizer
