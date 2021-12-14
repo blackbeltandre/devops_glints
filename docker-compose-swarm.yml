@@ -67,4 +67,3 @@ volumes:
 networks:
   network-api:
     driver: overlay
-    attachable: true
